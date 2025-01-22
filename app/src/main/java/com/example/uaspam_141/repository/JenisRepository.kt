@@ -1,6 +1,7 @@
 package com.example.uaspam_141.repository
 
 import com.example.uaspam_141.model.Jenis
+import com.example.uaspam_141.service.JenisService
 import java.io.IOException
 
 interface JenisRepository {
