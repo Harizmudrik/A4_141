@@ -4,7 +4,7 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class properti(
+data class Properti(
     @SerialName("id_properti") val idProperti: String,
     @SerialName("nama_properti") val namaProperti: String,
     @SerialName("deskripsi_properti") val deskripsiProperti: String,
