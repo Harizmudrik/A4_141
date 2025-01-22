@@ -1,0 +1,11 @@
+package com.example.uaspam_141.model
+
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
+
+@Serializable
+data class pemilik(
+    @SerialName("id_pemilik") val idPemilik: String,
+    @SerialName("nama_pemilik") val namaPemilik: String,
+    @SerialName("kontak_pemilik") val kontakPemilik: String
+)
