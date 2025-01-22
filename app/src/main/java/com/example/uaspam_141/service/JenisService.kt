@@ -15,10 +15,10 @@ interface JenisService {
         "Accept: application/json",
         "Content-Type: application/json",
     )
-    @GET("baca1jenis.php")
+    @GET("bacajenis.php")
     suspend fun getJenis(): List<Jenis>
 
-    @GET("bacajenis.php/{id_jenis}")
+    @GET("baca1jenis.php/{id_jenis}")
     suspend fun getJenisById(@Query("id_jenis") idJenis: String): Jenis
 
     @POST("insertjenis.php")

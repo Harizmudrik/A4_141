@@ -1,6 +1,7 @@
 package com.example.uaspam_141.repository
 
 import com.example.uaspam_141.model.Pemilik
+import com.example.uaspam_141.service.PemilikService
 import java.io.IOException
 
 interface PemilikRepository {
