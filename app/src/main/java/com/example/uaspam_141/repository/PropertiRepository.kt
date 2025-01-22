@@ -1,6 +1,7 @@
 package com.example.uaspam_141.repository
 
 import com.example.uaspam_141.model.Properti
+import com.example.uaspam_141.service.PropertiService
 import java.io.IOException
 
 interface PropertiRepository {
