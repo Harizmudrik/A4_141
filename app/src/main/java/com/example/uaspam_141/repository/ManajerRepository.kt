@@ -1,6 +1,7 @@
 package com.example.uaspam_141.repository
 
 import com.example.uaspam_141.model.Manajer
+import com.example.uaspam_141.service.ManajerService
 import java.io.IOException
 
 interface ManajerRepository {
