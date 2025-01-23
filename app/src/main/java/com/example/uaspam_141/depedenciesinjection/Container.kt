@@ -24,7 +24,7 @@ interface AppContainer{
     val pemilikRepository: PemilikRepository
 }
 
-class container: AppContainer{
+class Container: AppContainer{
     private val baseUrl = "http://localhost/properti/"
     private val json = Json { ignoreUnknownKeys = true }
     private val retrofit: Retrofit = Retrofit.Builder()
