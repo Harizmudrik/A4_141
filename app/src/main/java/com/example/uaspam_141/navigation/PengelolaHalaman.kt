@@ -23,7 +23,7 @@ fun PengelolaHalaman(navController: NavHostController = rememberNavController())
                 onDetailClick = { idProperti ->
                     navController.navigate("detail/$idProperti")
                 },
-                navigateToJenisProperti = { navController.navigate("jenisProperti") },
+                navigateToJenis = { navController.navigate("jenis") },
                 navigateToPemilik = { navController.navigate("pemilik") },
                 navigateToManajer = { navController.navigate("manajer") }
             )
@@ -112,3 +112,4 @@ fun PengelolaHalaman(navController: NavHostController = rememberNavController())
         }
     }
 }
+
