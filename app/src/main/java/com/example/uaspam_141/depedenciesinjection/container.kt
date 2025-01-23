@@ -34,7 +34,6 @@ class container: AppContainer{
     private val propertiService: PropertiService by lazy { retrofit.create(PropertiService::class.java) }
     override val propertiRepository: PropertiRepository by lazy { NetworkPropertiRepository(propertiService) }
 
-
     private val jenisService: JenisService by lazy { retrofit.create(JenisService::class.java) }
     override val jenisRepository: JenisRepository by lazy { NetworkJenisRepository(jenisService) }
 
