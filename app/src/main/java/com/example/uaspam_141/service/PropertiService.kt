@@ -1,5 +1,8 @@
 package com.example.uaspam_141.service
 
+import com.example.uaspam_141.model.Jenis
+import com.example.uaspam_141.model.Manajer
+import com.example.uaspam_141.model.Pemilik
 import com.example.uaspam_141.model.Properti
 import retrofit2.Response
 import retrofit2.http.Body
@@ -15,6 +18,16 @@ interface PropertiService {
         "Accept: application/json",
         "Content-Type: application/json",
     )
+
+    @GET("bacajenis")
+    suspend fun getJenis(): List<Jenis>
+
+    @GET("bacapemilik")
+    suspend fun getPemilik(): List<Pemilik>
+
+    @GET("bacamanajer")
+    suspend fun getManajer(): List<Manajer>
+
     @GET("bacaproperti.php")
     suspend fun getProperti(): List<Properti>
 
