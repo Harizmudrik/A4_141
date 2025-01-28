@@ -1,18 +1,19 @@
 package com.example.uaspam_141.model
 
-import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
 data class Properti(
-    @SerialName("id_properti") val idProperti: String,
-    @SerialName("nama_properti") val namaProperti: String,
-    @SerialName("deskripsi_properti") val deskripsiProperti: String,
-    @SerialName("lokasi") val lokasi: String,
-    @SerialName("harga") val harga: String,
-    @SerialName("status_properti") val statusProperti: String,
+    val id_properti: String,
+    val nama_properti: String,
+    val deskripsi_properti: String,
+    val lokasi: String,
+    val harga: Double,
+    val status_properti: String,
 
-    @SerialName("id_jenis") val idJenis: String,
-    @SerialName("id_pemilik") val idPemilik: String,
-    @SerialName("id_manajer") val idManajer: String,
+    val id_jenis: String,
+    val id_pemilik: String,
+    val id_manajer: String,
+
+
 )
