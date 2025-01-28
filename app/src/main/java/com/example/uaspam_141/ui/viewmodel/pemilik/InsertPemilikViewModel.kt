@@ -17,7 +17,15 @@ class InsertPemilikViewModel(private val pemilikRepository: PemilikRepository): 
         uiState = InsertPemilikUiState(insertUiEvent = insertUiEvent)
     }
 
-    suspend fun insertPemilik() {
+    fun isFormValid(): Boolean {
+        return uiState.insertUiEvent.run {
+            id_pemilik.isNotBlank() &&
+                    nama_pemilik.isNotBlank() &&
+                    kontak_pemilik.isNotBlank()
+        }
+    }
+
+     fun insertPemilik() {
         viewModelScope.launch {
             try {
                 pemilikRepository.insertPemilik(uiState.insertUiEvent.toPemilik())
@@ -33,15 +41,15 @@ data class InsertPemilikUiState(
 )
 
 data class InsertPemilikUiEvent(
-    val idPemilik: String = "",
-    val namaPemilik: String = "",
-    val kontakPemilik: String = ""
+    val id_pemilik: String = "",
+    val nama_pemilik: String = "",
+    val kontak_pemilik: String = ""
 )
 
 fun InsertPemilikUiEvent.toPemilik(): Pemilik = Pemilik(
-    idPemilik = idPemilik,
-    namaPemilik = namaPemilik,
-    kontakPemilik = kontakPemilik
+    id_pemilik = id_pemilik,
+    nama_pemilik = nama_pemilik,
+    kontak_pemilik = kontak_pemilik
 )
 
 fun Pemilik.toUiStatePemilik(): InsertPemilikUiState = InsertPemilikUiState(
@@ -49,7 +57,7 @@ fun Pemilik.toUiStatePemilik(): InsertPemilikUiState = InsertPemilikUiState(
 )
 
 fun Pemilik.toInsertPemilikUiEvent(): InsertPemilikUiEvent = InsertPemilikUiEvent(
-    idPemilik = idPemilik,
-    namaPemilik = namaPemilik,
-    kontakPemilik = kontakPemilik
+    id_pemilik = id_pemilik,
+    nama_pemilik = nama_pemilik,
+    kontak_pemilik = kontak_pemilik
 )

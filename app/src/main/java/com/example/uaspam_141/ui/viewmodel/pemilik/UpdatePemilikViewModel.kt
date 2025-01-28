@@ -13,10 +13,10 @@ class UpdatePemilikViewModel(private val pemilikRepository: PemilikRepository) :
     var uiState by mutableStateOf(UpdatePemilikUiState())
         private set
 
-    fun loadPemilik(idPemilik: String) {
+    fun loadPemilik(id_pemilik: String) {
         viewModelScope.launch {
             try {
-                val pemilik = pemilikRepository.getPemilikById(idPemilik)
+                val pemilik = pemilikRepository.getPemilikById(id_pemilik)
                 uiState = UpdatePemilikUiState(updatePemilikEvent = pemilik.toUpdatePemilikEvent())
             } catch (e: Exception) {
                 e.printStackTrace()
@@ -28,10 +28,10 @@ class UpdatePemilikViewModel(private val pemilikRepository: PemilikRepository) :
         uiState = UpdatePemilikUiState(updatePemilikEvent = updatePemilikEvent)
     }
 
-    suspend fun updatePemilik(idPemilik: String) {
+    fun updatePemilik(id_pemilik: String) {
         viewModelScope.launch {
             try {
-                pemilikRepository.updatePemilik(idPemilik, uiState.updatePemilikEvent.toPemilik())
+                pemilikRepository.updatePemilik(id_pemilik, uiState.updatePemilikEvent.toPemilik())
             } catch (e: Exception) {
                 e.printStackTrace()
             }
@@ -44,19 +44,19 @@ data class UpdatePemilikUiState(
 )
 
 data class UpdatePemilikEvent(
-    val idPemilik: String = "",
-    val namaPemilik: String = "",
-    val kontakPemilik: String = ""
+    val id_pemilik: String = "",
+    val nama_pemilik: String = "",
+    val kontak_pemilik: String = ""
 )
 
 fun UpdatePemilikEvent.toPemilik(): Pemilik = Pemilik(
-    idPemilik = idPemilik,
-    namaPemilik = namaPemilik,
-    kontakPemilik = kontakPemilik
+    id_pemilik = id_pemilik,
+    nama_pemilik = nama_pemilik,
+    kontak_pemilik = kontak_pemilik
 )
 
 fun Pemilik.toUpdatePemilikEvent(): UpdatePemilikEvent = UpdatePemilikEvent(
-    idPemilik = idPemilik,
-    namaPemilik = namaPemilik,
-    kontakPemilik = kontakPemilik
+    id_pemilik = id_pemilik,
+    nama_pemilik = nama_pemilik,
+    kontak_pemilik = kontak_pemilik
 )
