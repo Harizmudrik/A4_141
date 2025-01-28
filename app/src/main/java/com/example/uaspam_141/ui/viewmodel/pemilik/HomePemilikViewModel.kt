@@ -30,6 +30,7 @@ class HomePemilikViewModel (private val pemilikRepository: PemilikRepository): V
             pemilikUiState = HomePemilikUiState.Loading
             pemilikUiState = try {
                 HomePemilikUiState.Success(pemilikRepository.getPemilik())
+                HomePemilikUiState.Success(pemilikRepository.getPemilik())
             }catch (e: IOException){
                 HomePemilikUiState.Error
             }catch (e: HttpException){
@@ -38,10 +39,10 @@ class HomePemilikViewModel (private val pemilikRepository: PemilikRepository): V
         }
     }
 
-    fun deletePemilik(idPemilik: String){
+    fun deletePemilik(id_pemilik: String){
         viewModelScope.launch {
             try {
-                pemilikRepository.deletePemilik(idPemilik)
+                pemilikRepository.deletePemilik(id_pemilik)
             }catch (e: IOException){
                 HomePemilikUiState.Error
             }catch (e: HttpException){
